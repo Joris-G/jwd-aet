@@ -1,0 +1,50 @@
+<app-process-header [process]="process"></app-process-header>
+<!-- @for (group of groups; track $index) { -->
+
+@if (process.measures && process.measures.length) {
+<div class="measures-panel">
+  @for (measure of process.measures; track $index) {
+  <div class="workorder">OF : {{ measure.workorder }}</div>
+  <div id="processDuration">Résultat : {{ measure.dateMesure }}</div>
+  }
+</div>
+
+}@else {
+<div class="no-measure">Aucune mesures à afficher</div>
+}
+
+<ion-accordion-group>
+  <ion-accordion value="first">
+    <ion-item slot="header" color="light">
+      <ion-label>First Accordion</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">
+      <app-group></app-group>
+    </div>
+  </ion-accordion>
+  <ion-accordion value="second">
+    <ion-item slot="header" color="light">
+      <ion-label>Second Accordion</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">
+      <app-group></app-group>
+    </div>
+  </ion-accordion>
+  <ion-accordion value="third">
+    <ion-item slot="header" color="light">
+      <ion-label>Third Accordion</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">
+      <app-group></app-group>
+    </div>
+  </ion-accordion>
+</ion-accordion-group>
+
+<!-- } -->
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Footer</ion-title>
+  </ion-toolbar>
+  <app-chrono-commands></app-chrono-commands>
+</ion-footer>

@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>chronoMain</ion-title>
+    <div
+      class="home-btn button"
+      [routerLink]="['/home']"
+      routerLinkActive
+    >Home</div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  @if(process$ | async; as process){
+
+  <app-process [process]="process"></app-process>
+  }
+</ion-content>

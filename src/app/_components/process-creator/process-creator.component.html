@@ -1,0 +1,62 @@
+<form [formGroup]="processCreatorForm" (ngSubmit)="onProcessSubmit()">
+  <ion-item>
+    <ion-input
+      formControlName="processName"
+      labelPlacement="floating"
+      required
+      type="text"
+    >
+      <div slot="label">
+        Nom du process <ion-text color="danger">*</ion-text>
+      </div>
+    </ion-input>
+  </ion-item>
+
+  <!-- <ion-item>
+    <ion-input
+      formControlName="processWorkorder"
+      labelPlacement="floating"
+      required
+      placeholder="35000 - 1/1"
+      type="text"
+    >
+      <div slot="label">Numéro d'OF <ion-text color="danger">*</ion-text></div>
+    </ion-input>
+  </ion-item> -->
+  <ion-item>
+    <ion-input
+      formControlName="processPartNumber"
+      labelPlacement="floating"
+      placeholder="Le PN de la pièce"
+      type="text"
+      label="Numéro d'OF "
+    >
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <!-- <ion-text color="danger">*</ion-text> -->
+
+    <ion-input
+      formControlName="processTargetTime"
+      labelPlacement="floating"
+      required
+      type="number"
+    >
+      <div slot="label">
+        Temps cible <ion-text color="danger">*</ion-text>
+      </div></ion-input
+    >
+  </ion-item>
+
+  <ion-button
+    block
+    color="primary"
+    type="submit"
+    [disabled]="processCreatorForm.invalid"
+  >
+    Terminer
+  </ion-button>
+</form>
+
+{{ processCreatorForm.value | json }}

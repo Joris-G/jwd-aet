@@ -10,4 +10,16 @@ export const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
+  {
+    path: 'login',
+    loadComponent: () => import('./login/login.page').then(m => m.LoginPage)
+  },
+  {
+    path: 'register',
+    loadComponent: () => import('./register/register.page').then(m => m.RegisterPage)
+  },
+  {
+    path: 'chrono-main/:id',
+    loadComponent: () => import('./chrono-main/chrono-main.page').then(m => m.ChronoMainPage)
+  },
 ];
